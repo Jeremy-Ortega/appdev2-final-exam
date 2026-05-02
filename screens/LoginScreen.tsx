@@ -18,7 +18,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (id: Id<"users">) =>
   // 1. State for form inputs
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [fullname, setFullName] = useState("");
 
 
   
@@ -32,7 +32,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (id: Id<"users">) =>
     }
 
     try {
-      await createUser({ username, password });
+      await createUser({ username, password, fullname });
       Alert.alert("Success", "Account created successfully!");
       // Here you would typically navigate back to Login or into the App
     } catch (error) {
@@ -55,7 +55,7 @@ export default function LoginScreen({ onLogin }: { onLogin: (id: Id<"users">) =>
         <TextInput 
           style={styles.input} 
           placeholder="John Doe" 
-          value={fullName}
+          value={fullname}
           onChangeText={setFullName}
         />
         
