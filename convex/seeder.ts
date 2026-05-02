@@ -3,6 +3,12 @@ import { mutation } from "./_generated/server";
 export const seed = mutation({
   args: {},
   handler: async (ctx) => {
+    // Update these fields to match your schema's required properties
+    const testUserId = await ctx.db.insert("users", {
+      username: "exam_tester", 
+      password: "password123",
+    });
+
     const initialTasks = [
       "Buy groceries",
       "Finish React Native tutorial",
@@ -19,10 +25,11 @@ export const seed = mutation({
     for (const taskText of initialTasks) {
       await ctx.db.insert("todos", {
         text: taskText,
-        isCompleted: Math.random() > 0.7, // Randomly mark some as completed
+        isCompleted: Math.random() > 0.7, 
+        userId: testUserId,
       });
     }
     
-    return "Successfully seeded 10 tasks!";
+    return "Successfully seeded 10 tasks linked to user!";
   },
 });
