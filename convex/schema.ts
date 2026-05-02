@@ -10,6 +10,6 @@ export default defineSchema({
   users: defineTable({
     username: v.string(),
     password: v.string(),
-    fullname: v.string(), // Added the new field here
-  })
+    fullname: v.string(),
+  }).index("by_username", ["username"]),
 });

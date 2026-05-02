@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Ionicons from "@react-native-vector-icons/ionicons";
+import { Ionicons } from "@expo/vector-icons";
 import {
     Alert,
     KeyboardAvoidingView,
@@ -45,6 +45,7 @@ const TodoScreen = ({ userId }: {userId: Id<"users">}) => {
     };
 
     const confirmDelete = (id: Id<"todos">) => {
+        console.log("Delete button pressed for ID:", id);
         Alert.alert("Delete Task", "Are you sure you want to remove this?", [
             { text: "Cancel", style: "cancel" },
             {
