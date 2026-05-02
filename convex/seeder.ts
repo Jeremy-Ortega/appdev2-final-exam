@@ -5,8 +5,9 @@ export const seed = mutation({
   handler: async (ctx) => {
     // Update these fields to match your schema's required properties
     const testUserId = await ctx.db.insert("users", {
-      username: "exam_tester", 
+      username: "Jerem", 
       password: "password123",
+      fullname: "Jeremy Ortega"
     });
 
     const initialTasks = [
