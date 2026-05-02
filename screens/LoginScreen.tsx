@@ -1,13 +1,6 @@
 import { useState } from "react";
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    TouchableOpacity,
-    TextInput,
-    Alert,
-} from "react-native";
+
+
 import Ionicons from "@react-native-vector-icons/ionicons";
 
 import { useMutation } from "convex/react";
